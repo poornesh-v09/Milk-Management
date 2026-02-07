@@ -1,0 +1,352 @@
+.admin-attendance-page {
+    padding: 1.5rem 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Filter Section */
+.filter-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+.filter-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1.25rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.filter-row:last-child {
+    margin-bottom: 0;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.radio-group input[type="radio"] {
+    cursor: pointer;
+}
+
+.date-filters {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+}
+
+.form-input {
+    padding: 0.625rem 0.875rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background-color: white;
+}
+
+.filter-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Alert */
+.alert {
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.alert-error {
+    background-color: #fee;
+    color: #c33;
+    border: 1px solid #fcc;
+}
+
+/* Records Container */
+.records-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.loading-state,
+.empty-state {
+    padding: 3rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* Premium Card Style (Standardized) */
+.attendance-record.card {
+    padding: 0;
+    overflow: hidden;
+    border: 1.5px solid var(--card-border-color);
+    /* Matching global card border */
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.attendance-record.card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.record-header {
+    padding: 1.5rem 2rem;
+    /* Metallic Silver Gradient */
+    background: linear-gradient(180deg, #ffffff 0%, #f7f9fa 100%);
+    color: #000000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    border-bottom: 1.5px solid var(--card-border-color);
+    /* Matching border width/color */
+}
+
+.header-left h3 {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+    color: #000000;
+    /* Bold Black */
+    letter-spacing: -0.025em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.date-label {
+    font-size: 0.95rem;
+    opacity: 1;
+    font-weight: 600;
+    color: #374151;
+    background: rgba(255, 255, 255, 0.5);
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    border: 1px solid #cbd5e1;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.header-right {
+    display: flex;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 120px;
+    position: relative;
+}
+
+/* Vertical divider between stats */
+.stat-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 70%;
+    width: 1px;
+    background: #cbd5e1;
+    /* Slate 300 */
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: #15803d;
+    /* Green 700 - Matching accent */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.stat-value {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #000000;
+    /* Dark black */
+}
+
+/* Table */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+.admin-table thead {
+    background-color: var(--background-color);
+}
+
+.admin-table th {
+    padding: 0.875rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.admin-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s;
+}
+
+.admin-table tbody tr:hover {
+    background-color: var(--background-color);
+}
+
+.admin-table tbody tr.absent-row {
+    background-color: #fff3cd;
+}
+
+.admin-table tbody tr.absent-row:hover {
+    background-color: #ffecb3;
+}
+
+.admin-table td {
+    padding: 0.875rem 1rem;
+    vertical-align: middle;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.customer-name {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.delivered-qty {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.status-badge.delivered {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-badge.absent {
+    background-color: #fff3e0;
+    color: #e65100;
+}
+
+.amount {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-family: 'Courier New', monospace;
+}
+
+
+/* Print Styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .admin-attendance-page {
+        padding: 0;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .attendance-record {
+        page-break-inside: avoid;
+        margin-bottom: 2rem;
+    }
+
+    .record-header {
+        background: #4a5568 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .admin-table {
+        font-size: 0.85rem;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        padding: 0.5rem;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .filter-group {
+        min-width: 100%;
+    }
+
+    .date-filters {
+        flex-direction: column;
+    }
+
+    .filter-actions {
+        flex-direction: column;
+    }
+}
+
+.admin-table {
+    font-size: 0.875rem;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 0.625rem 0.5rem;
+}

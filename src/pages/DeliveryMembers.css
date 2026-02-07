@@ -1,0 +1,152 @@
+.members-page {
+    padding-bottom: 5rem;
+}
+
+.staff-card-v5 {
+    transition: all 0.1s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.staff-card-v5:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(67, 160, 71, 0.1);
+}
+
+.staff-card-v5.suspended {
+    opacity: 0.5;
+    filter: grayscale(1);
+}
+
+.label-v5 {
+    display: block;
+    font-size: 0.625rem;
+    font-weight: 800;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.input-v5 {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.input-v5:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.1);
+}
+
+/* Shift Selector Styles (Shared) */
+.shift-selector-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.shift-tabs {
+    display: flex;
+    background: #eef2f6;
+    padding: 0.25rem;
+    border-radius: 8px;
+    gap: 0.25rem;
+}
+
+.shift-tab {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.shift-tab:hover {
+    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.shift-tab.active {
+    background: white;
+    color: var(--primary-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Shift Badge in Table */
+.badge-shift {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.6rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badge-shift.morning {
+    background: #fff8e1;
+    color: #f57c00;
+    border: 1px solid #ffe0b2;
+}
+
+.badge-shift.evening {
+    background: #e8eaf6;
+    color: #3f51b5;
+    border: 1px solid #c5cae9;
+}
+
+.badge-shift.both {
+    background: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #c8e6c9;
+}
+
+/* Form Shift Options */
+.shift-options {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.shift-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    flex: 1;
+    justify-content: center;
+}
+
+.shift-option:hover {
+    border-color: var(--primary-color);
+    background: #f9fbf9;
+}
+
+.shift-option.selected {
+    border-color: var(--primary-color);
+    background: #f0fdf4;
+    color: var(--primary-color);
+}
+
+.shift-option input {
+    display: none;
+}

@@ -1,0 +1,109 @@
+.total-revenue-card {
+    padding: 2.5rem;
+    text-align: center;
+    background: var(--primary-gradient);
+    color: white;
+    margin-bottom: 2.5rem;
+    border-radius: var(--radius-md);
+}
+
+.total-label {
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.total-value {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.revenue-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.revenue-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.revenue-table {
+    padding: 0;
+    overflow: hidden;
+}
+
+.revenue-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.revenue-table thead {
+    background: var(--background-color);
+}
+
+.revenue-table th {
+    padding: 1rem 1.5rem;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.revenue-table td {
+    padding: 1rem 1.5rem;
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.revenue-table tbody tr:hover {
+    background: var(--background-color);
+}
+
+.revenue-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.empty-row {
+    text-align: center;
+    color: var(--text-secondary);
+    font-style: italic;
+    padding: 2rem !important;
+}
+
+@media (max-width: 768px) {
+    .total-value {
+        font-size: 2.5rem;
+    }
+
+    .revenue-table {
+        overflow-x: auto;
+    }
+
+    .revenue-table th,
+    .revenue-table td {
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+    }
+}

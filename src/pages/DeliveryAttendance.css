@@ -1,0 +1,702 @@
+.attendance-page {
+    padding: 1.5rem 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Date Selector Card */
+.date-selector-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f6f8fb 100%);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e8ecf4;
+}
+
+.date-selector-card h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.date-row {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.date-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 150px;
+}
+
+.date-field label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.date-field select {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e0e7ff;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.date-field select:hover {
+    border-color: var(--primary-color);
+}
+
+.date-field select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.1);
+}
+
+.date-field select:disabled {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+    opacity: 0.7;
+    border-color: #d1d5db;
+}
+
+.btn-load {
+    padding: 0.875rem 2rem;
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(67, 160, 71, 0.3);
+    white-space: nowrap;
+}
+
+.btn-load:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67, 160, 71, 0.4);
+}
+
+.btn-load:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.helper-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.selected-date-box {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: #e8f5e9;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-color);
+    font-size: 1.05rem;
+}
+
+.selected-date-box strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Message Boxes */
+.message-box {
+    padding: 1.125rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.message-box::before {
+    font-size: 1.5rem;
+}
+
+.error-message {
+    background: linear-gradient(135deg, #fee 0%, #fdd 100%);
+    color: #c33;
+    border: 2px solid #fcc;
+}
+
+.error-message::before {
+    content: '⚠️';
+}
+
+.success-message {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    border: 2px solid #c3e6cb;
+}
+
+.success-message::before {
+    content: '✅';
+}
+
+/* Date Selector Section - LEGACY (keeping for compatibility) */
+.date-selector-section {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f6f8fb 0%, #ffffff 100%);
+    border: 2px solid #e8ecf4;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.date-selector-section h2 {
+    font-size: 1.375rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.date-selector-section h2::before {
+    content: '📅';
+    font-size: 1.5rem;
+}
+
+.date-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.date-inputs .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.date-inputs .input-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.date-inputs select {
+    padding: 0.875rem 1rem;
+    border: 2px solid #e0e7ff;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.date-inputs select:hover {
+    border-color: var(--primary-color);
+}
+
+.date-inputs select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.1);
+}
+
+.date-inputs select:disabled {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+    opacity: 0.7;
+    border-color: #d1d5db;
+}
+
+.load-btn {
+    height: auto;
+    padding: 1rem 2rem;
+    margin-top: 0;
+    min-width: 180px;
+    background: var(--primary-gradient);
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(67, 160, 71, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.load-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.load-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.selected-date-display {
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0f4ff 100%);
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    font-size: 1.05rem;
+}
+
+.selected-date-display strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+
+/* Alerts - LEGACY (keeping for compatibility) */
+.alert {
+    padding: 1.125rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.alert::before {
+    font-size: 1.5rem;
+}
+
+.alert-error {
+    background: linear-gradient(135deg, #fee 0%, #fdd 100%);
+    color: #c33;
+    border: 2px solid #fcc;
+}
+
+.alert-error::before {
+    content: '⚠️';
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #efe 0%, #dfd 100%);
+    color: #2d5;
+    border: 2px solid #cfc;
+}
+
+.alert-success::before {
+    content: '✅';
+}
+
+/* Attendance Table Card */
+.attendance-table-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e8ecf4;
+    margin-bottom: 2rem;
+}
+
+/* Attendance Table Section - LEGACY */
+.attendance-table-section {
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+    border: 2px solid #e8ecf4;
+}
+
+.table-scroll,
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 1rem;
+}
+
+.attendance-table thead {
+    background: var(--primary-gradient);
+    color: white;
+}
+
+.attendance-table th {
+    padding: 1.25rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+}
+
+.attendance-table th:first-child {
+    text-align: center;
+    width: 70px;
+    border-top-left-radius: 12px;
+}
+
+.attendance-table th:last-child {
+    border-top-right-radius: 12px;
+}
+
+
+.attendance-table tbody tr {
+    border-bottom: 1px solid #e8ecf4;
+    transition: all 0.2s ease;
+    background-color: white;
+}
+
+.attendance-table tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.attendance-table tbody tr:hover {
+    background-color: #f0f4ff;
+    transform: scale(1.005);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.attendance-table tbody tr.absent-row,
+.attendance-table tbody tr.row-absent {
+    background-color: #fff8e1;
+}
+
+.attendance-table tbody tr.absent-row:hover,
+.attendance-table tbody tr.row-absent:hover {
+    background-color: #ffecb3;
+}
+
+.attendance-table td {
+    padding: 1.125rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.attendance-table td:first-child,
+.col-number {
+    text-align: center;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.05rem;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.col-name {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.col-fixed,
+.col-delivered {
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    text-align: center;
+}
+
+.col-status {
+    text-align: center;
+}
+
+.customer-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.fixed-qty {
+    color: var(--text-secondary);
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+
+.qty-select,
+.qty-dropdown {
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e7ff;
+    border-radius: 8px;
+    font-size: 1rem;
+    min-width: 110px;
+    background-color: white;
+    cursor: pointer;
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    font-weight: 600;
+    color: #667eea;
+    transition: all 0.2s ease;
+}
+
+.qty-select:hover,
+.qty-dropdown:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(67, 160, 71, 0.1);
+}
+
+.qty-select:focus,
+.qty-dropdown:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(67, 160, 71, 0.15);
+}
+
+.qty-select:disabled,
+.qty-dropdown:disabled {
+    background-color: #f3f4f6;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.status-btn,
+.status-toggle {
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    min-width: 70px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.status-btn.delivered,
+.status-toggle.delivered {
+    background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+    color: white;
+}
+
+.status-btn.delivered:hover,
+.status-toggle.delivered:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.status-btn.absent,
+.status-toggle.absent {
+    background: linear-gradient(135deg, #ff9800 0%, #f57c00 100%);
+    color: white;
+}
+
+.status-btn.absent:hover,
+.status-toggle.absent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+}
+
+.amount {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-family: 'SF Mono', 'Monaco', 'Courier New', monospace;
+    text-align: right;
+    font-size: 1.05rem;
+}
+
+.attendance-table tfoot {
+    background-color: var(--bg-secondary);
+    font-weight: 700;
+}
+
+.attendance-table tfoot td {
+    padding: 1rem 0.75rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.total-row strong {
+    color: var(--text-primary);
+}
+
+/* Action Buttons */
+.action-buttons,
+.button-row {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+}
+
+.btn-primary {
+    padding: 0.875rem 2rem;
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(67, 160, 71, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(67, 160, 71, 0.4);
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    padding: 0.875rem 2rem;
+    background: var(--secondary-gradient);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(117, 117, 117, 0.3);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(117, 117, 117, 0.4);
+}
+
+.btn-secondary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Empty State */
+.empty-state,
+.empty-box {
+    padding: 3rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+    border-radius: 12px;
+    border: 2px dashed #e0e7ff;
+    margin: 2rem 0;
+}
+
+.empty-box p {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .date-inputs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .date-inputs .input-group {
+        width: 100%;
+    }
+
+    .date-inputs select,
+    .load-btn {
+        width: 100%;
+    }
+
+    .attendance-table {
+        font-size: 0.875rem;
+    }
+
+    .attendance-table th,
+    .attendance-table td {
+        padding: 0.625rem 0.5rem;
+    }
+
+    .qty-select {
+        min-width: 80px;
+        font-size: 0.875rem;
+    }
+
+    .status-btn {
+        min-width: 50px;
+        padding: 0.4rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    .date-selector-section,
+    .action-buttons,
+    .alert {
+        display: none;
+    }
+
+    .attendance-table {
+        font-size: 0.85rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Shift Selector Styles */
+.shift-selector-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.shift-tabs {
+    display: flex;
+    background: #f1f3f9;
+    padding: 0.5rem;
+    border-radius: 12px;
+    gap: 0.5rem;
+}
+
+.shift-tab {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.shift-tab:hover {
+    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.shift-tab.active {
+    background: white;
+    color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
