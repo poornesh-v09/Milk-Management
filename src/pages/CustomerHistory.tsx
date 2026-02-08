@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getCustomerHistory, calculateProductPrice } from '../services/mockData';
 import type { DeliveryRecord, Customer } from '../types';
 import './CustomerHistory.css';

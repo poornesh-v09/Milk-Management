@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { getProductStatistics, type ProductStats } from '../services/statsService';
 import HistorySelector from '../components/HistorySelector';
 import './ProductDetails.css'; // We can reuse the CSS or rename it later

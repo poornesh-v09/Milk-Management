@@ -8,8 +8,8 @@ const PRICES_KEY = 'milk_app_prices';
 
 // Initial dummy members
 const initialMembers: DeliveryMember[] = [
-    { id: 'm1', name: 'Ramesh (Route A)', mobile: '9800011122', route: 'North Extension', isActive: true },
-    { id: 'm2', name: 'Suresh (Route B)', mobile: '9800033344', route: 'South Garden', isActive: true }
+    { id: 'm1', name: 'Ramesh (Route A)', mobile: '9800011122', route: 'North Extension', isActive: true, shift: 'Morning' },
+    { id: 'm2', name: 'Suresh (Route B)', mobile: '9800033344', route: 'South Garden', isActive: true, shift: 'Both' }
 ];
 
 const defaultPrices: Record<ProductType, number> = {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { getTeamStatistics, type TeamMemberStats } from '../services/mockData';
 import HistorySelector from '../components/HistorySelector';
 import './TeamDetails.css';
